@@ -50,6 +50,8 @@
 		5C9BF4AD2318F8DF004EF9BA /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9BF4AC2318F8DE004EF9BA /* config.swift */; };
 		5C9BF4B12318FDD7004EF9BA /* cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9BF4B02318FDD7004EF9BA /* cache.swift */; };
 		5C9E4AE2230E7F6C00BF4011 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D229618C230A79DA00FA2EEB /* CollectionHeaderView.swift */; };
+		5C9F8133237C0D1A00CEA64B /* shakePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F8132237C0D1A00CEA64B /* shakePlayer.swift */; };
+		5C9F8135237C0DA100CEA64B /* HeaderFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F8134237C0DA100CEA64B /* HeaderFile.swift */; };
 		5CB687EC234C2E7E0092E44A /* BaseUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB687E9234C2E7D0092E44A /* BaseUICollectionView.swift */; };
 		5CB687EF234C30E50092E44A /* DFHorizontalPageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB687EE234C30E50092E44A /* DFHorizontalPageLayout.swift */; };
 		5CB687FB234C5AB90092E44A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB687FA234C5AB90092E44A /* MenuTableViewCell.swift */; };
@@ -360,6 +362,8 @@
 		5C68979823019AEC00BDB014 /* ZJAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJAlertController.swift; sourceTree = "<group>"; };
 		5C9BF4AC2318F8DE004EF9BA /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		5C9BF4B02318FDD7004EF9BA /* cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cache.swift; sourceTree = "<group>"; };
+		5C9F8132237C0D1A00CEA64B /* shakePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shakePlayer.swift; sourceTree = "<group>"; };
+		5C9F8134237C0DA100CEA64B /* HeaderFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFile.swift; sourceTree = "<group>"; };
 		5CB687E9234C2E7D0092E44A /* BaseUICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUICollectionView.swift; sourceTree = "<group>"; };
 		5CB687EE234C30E50092E44A /* DFHorizontalPageLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHorizontalPageLayout.swift; sourceTree = "<group>"; };
 		5CB687FA234C5AB90092E44A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -839,6 +843,7 @@
 		5CFD92F2237910250017EA5A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				5C9F8132237C0D1A00CEA64B /* shakePlayer.swift */,
 				5CFD92F5237913150017EA5A /* homeShakeCell.swift */,
 			);
 			path = view;
@@ -2234,6 +2239,7 @@
 		D2B9F41822FBFBD7006E682A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5C9F8134237C0DA100CEA64B /* HeaderFile.swift */,
 				5CFD92F3237912750017EA5A /* HCFallsFlowLayout.swift */,
 				5C0E2B33236189DD0064A94C /* PresentTransition.swift */,
 				5CFE760823584E94000C765F /* GYRollingNoticeView-Swift */,
@@ -3019,6 +3025,7 @@
 				FB8081D82348FA1A006CA95E /* ShareSdkModel.swift in Sources */,
 				D2DB5BD123384BE30078AE70 /* ShareGoodsItem.swift in Sources */,
 				D2B094A2231B9FCF00080743 /* RouseFooterView.swift in Sources */,
+				5C9F8133237C0D1A00CEA64B /* shakePlayer.swift in Sources */,
 				D2B0972E2323ABAA00080743 /* test.m in Sources */,
 				D2B094EB231F9E1700080743 /* RightClassify.swift in Sources */,
 				D2162E7D2315369F00F092F5 /* ShareView.swift in Sources */,
@@ -3066,6 +3073,7 @@
 				D2B9F40622FBFBAC006E682A /* AppDelegate.swift in Sources */,
 				D26CE13B2340858700F36F27 /* Extension-String.swift in Sources */,
 				D2EE156A23585AF200484E28 /* PddDetailController.swift in Sources */,
+				5C9F8135237C0DA100CEA64B /* HeaderFile.swift in Sources */,
 				D22961C7230A79DA00FA2EEB /* ClassifyGoodsListView.swift in Sources */,
 				FBC9E5CB230FB71100B13239 /* SignupView.swift in Sources */,
 				D2FC6EA7233B9F2400C3E5E9 /* WithdrawPop.swift in Sources */,
