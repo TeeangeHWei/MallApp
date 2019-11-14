@@ -104,7 +104,7 @@ class PddGoodsCard : UIView {
             platform.layer.masksToBounds = true
             platform.configureLayout { (layout) in
                 layout.isEnabled = true
-                layout.width = YGValue(32)
+                layout.width = YGValue(34)
                 layout.height = YGValue(16)
                 layout.marginRight = 4
                 goodsName.addSubview(platform)

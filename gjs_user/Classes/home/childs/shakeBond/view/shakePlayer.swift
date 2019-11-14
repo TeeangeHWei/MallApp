@@ -125,6 +125,7 @@ class shakePlayer: UIView {
             }else if keyPath == "status" {
                 if playerItem.status == .readyToPlay {
                     indicatorView.stopAnimating()
+                    player.play()
                 }else{
                     //indicatorView.stopAnimating()
                 }
@@ -372,6 +373,7 @@ class shakePlayer: UIView {
         @objc func tapAction(sender: UITapGestureRecognizer) {
             if player.status == .unknown {
                 self.playOrPauseBigBtnClick(sender: playOrPauseBigBtn)
+                
                 return;
             }
             isShowToolView = !isShowToolView

@@ -188,10 +188,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                 redirectUri: "http://www.sharesdk.cn",
                                                 authType: SSDKAuthTypeBoth)
                     
-                case SSDKPlatformType.typeWechat:
+//                case SSDKPlatformType.typeWechat:
+//                    //设置微信应用信息
+//                    appInfo?.ssdkSetupWeChat(byAppId: "wxd25146be82f03e80",
+//                                             appSecret: "b557f88008c3903e07afa89e6b56d161")
+                    case SSDKPlatformType.typeWechat:
                     //设置微信应用信息
-                    appInfo?.ssdkSetupWeChat(byAppId: "wxd25146be82f03e80",
-                                             appSecret: "b557f88008c3903e07afa89e6b56d161")
+                    appInfo?.ssdkSetupWeChat(byAppId: "wxc95db815c74b1718",
+                                             appSecret: "81fab92710e94f5391e8343b396c120f")
+                    
                 case SSDKPlatformType.typeQQ:
                     //设置QQ应用信息
                     appInfo?.ssdkSetupQQ(byAppId: "1108863659",
