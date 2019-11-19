@@ -830,9 +830,9 @@
 			isa = PBXGroup;
 			children = (
 				5CFD930B237B91DE0017EA5A /* VideosViewController.swift */,
-				5CFD9309237B91DD0017EA5A /* VideoViewController.swift */,
 				5CFD92EF23790FFF0017EA5A /* shakeBondViewController.swift */,
 				5CFD92FD237AB0860017EA5A /* shakeBondVideoController.swift */,
+				5CFD9309237B91DD0017EA5A /* VideoViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";

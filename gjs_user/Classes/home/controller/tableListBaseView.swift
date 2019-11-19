@@ -425,7 +425,7 @@ extension tableListBaseView : UITableViewDelegate,UITableViewDataSource{
             return 1
         }else if section == 5{
             if UserDefaults.getIsShow() == 1{
-                return 0
+                return 1
             }else{
                 return 0
             }

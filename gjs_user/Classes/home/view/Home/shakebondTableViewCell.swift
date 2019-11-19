@@ -418,7 +418,9 @@ extension shakebondTableViewCell : UICollectionViewDelegate,UICollectionViewData
        }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0{
-            let videoVC = shakeBondVideoController()
+            let videoVC = VideoViewController()
+            let model = self.shakebondModel![indexPath.row]
+            videoVC.playNum.text = model.dy_video_like_count
             naviController?.pushViewController(videoVC, animated: true)
         }else{
             let vc = shakeBondViewController()
