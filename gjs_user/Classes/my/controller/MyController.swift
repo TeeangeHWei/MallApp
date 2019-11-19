@@ -25,6 +25,10 @@ class MyController: ViewController, UIScrollViewDelegate {
     private let moneyValue = UILabel()
     // 轮播图数组
     private var bannerList = [MyBanner]()
+    // 公告图片
+    private var noticeList1 = [notice]()
+    var appurlStr = String()
+    var noticeImg = String()
     var swiper : LLCycleScrollView?
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -482,7 +486,7 @@ class MyController: ViewController, UIScrollViewDelegate {
         swiper = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y: 0, width: containerSize.width - 20, height: (containerSize.width - 20) * 0.21), didSelectItemAtIndex: { index in
             let vc = BannerWebViewController()
             vc.webAddress = "https://www.ganjinsheng.com/user/null"
-            vc.toUrl = self.bannerList[index].appUrl!
+            vc.toUrl = self.bannerList[index].appUrl! + "123"
             vc.headerTitle = self.bannerList[index].adTitle!
             self.navigationController?.pushViewController(vc, animated: true)
         })
@@ -793,6 +797,7 @@ class MyController: ViewController, UIScrollViewDelegate {
         // 请求数据
         getInfo()
         getBanner()
+        getNotice()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -890,7 +895,11 @@ class MyController: ViewController, UIScrollViewDelegate {
         }else if sender.view?.tag == 8 {
             navigationController?.pushViewController(CourseController(), animated: true)
         }else if sender.view?.tag == 9 {
-            navigationController?.pushViewController(NoticeView(), animated: true)
+            let vc = NoticeView()
+            vc.navC = self.navigationController
+            vc.noticeImg1 = self.noticeImg
+            vc.noticeUrl = self.appurlStr
+            navigationController?.pushViewController(vc, animated: true)
         }else if sender.view?.tag == 10 {
             navigationController?.pushViewController(MyCollectionController(), animated: true)
         }else if sender.view?.tag == 11 {
@@ -950,6 +959,31 @@ class MyController: ViewController, UIScrollViewDelegate {
                 imgList.append(imgUrl)
             }
             self.swiper!.imagePaths = imgList
+        },
+        error:{
+        },
+        failure:{
+        })
+    }
+    // 获取公告
+    func getNotice () {
+        AlamofireUtil.post(url:"/user/public/slideshow/list", param: [
+            "pageNo" : "1",
+            "pageSize" : "10",
+            "specialShowType" : "2"
+        ],
+        success:{(res, data) in
+            self.noticeList1 = noticeList.deserialize(from: data.description)!.list!
+            print("notice::",data)
+            var imgList = [String]()
+            for item in self.noticeList1 {
+                let imgUrl = "https://www.ganjinsheng.com" + String(item.img!)
+                let appurl = item.url
+                self.noticeImg = imgUrl
+                self.appurlStr = appurl!
+                imgList.append(imgUrl)
+            }
+            
         },
         error:{
         },

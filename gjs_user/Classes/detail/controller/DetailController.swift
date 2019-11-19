@@ -110,6 +110,8 @@ class DetailController: UIViewController, UIScrollViewDelegate, UIWebViewDelegat
             if self.isCancel {
                 return
             }
+            print("detaildata::",detailId!)
+            print("detaildata::",data)
             self.goodsInfo = DetailData.deserialize(from: data["data"].description)!
             self.detailView = DetailView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - 60), data: self.goodsInfo!)
             self.detailView?.coupon.addTarget(self, action: #selector(self.getBatteryLevel), for: .touchUpInside)

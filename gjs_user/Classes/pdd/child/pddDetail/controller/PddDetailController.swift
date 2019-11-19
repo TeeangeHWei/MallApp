@@ -10,7 +10,7 @@ import WebKit
 
 @available(iOS 11.0, *)
 class PddDetailController: UIViewController, UIScrollViewDelegate, UIWebViewDelegate {
-    var goodsId : String?
+    
     var goodsInfo : PddDetailData?
     var detailView : PddDetailView?
     var footer = PddDetailFooter(frame: CGRect(x: 0, y: kScreenH - 60, width: kScreenW, height: 60))
@@ -87,7 +87,7 @@ class PddDetailController: UIViewController, UIScrollViewDelegate, UIWebViewDele
     
     // 获取宝贝信息
     func getData () {
-        AlamofireUtil.post(url:"/ddk/public/pddGoodsDetail", param: ["goodsIdList" : self.goodsId!],
+        AlamofireUtil.post(url:"/ddk/public/pddGoodsDetail", param: ["goodsIdList" : goodsId!],
         success:{(res,data) in
             self.goodsInfo = PddDetailData.deserialize(from: data[0].description)!
             self.detailView = PddDetailView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - 60), data: self.goodsInfo!)
@@ -192,7 +192,7 @@ class PddDetailController: UIViewController, UIScrollViewDelegate, UIWebViewDele
     func getUrl (_ n : Int) {
         IDLoading.id_showWithWait()
         AlamofireUtil.post(url:"/ddk/pddDdkGoodsPromotionUrlGenerate", param: [
-            "goodsId" : self.goodsId!,
+            "goodsId" : goodsId!,
             "generateShortUrl" : true,
             "generateWeappWebview" : true
         ],

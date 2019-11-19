@@ -59,7 +59,7 @@ class AlamofireUtil {
                     break
                 case 401 :
                     // 密钥过期，清除本地密钥
-                    IDToast.id_show(msg: "您的登录过期了")
+//                    IDToast.id_show(msg: "您的登录过期了")
                     UserDefaults.removeAutho()
                     break
                 case 403 :
@@ -92,7 +92,7 @@ class AlamofireUtil {
                 break
             case 401 :
                 // 密钥过期，清除本地密钥
-                IDToast.id_show(msg: "您的登录过期了")
+//                IDToast.id_show(msg: "您的登录过期了")
                 UserDefaults.removeAutho()
                 break
             case 403 :

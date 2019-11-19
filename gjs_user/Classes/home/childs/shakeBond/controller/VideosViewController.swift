@@ -48,15 +48,13 @@ class VideosViewController: ViewController,UIPageViewControllerDelegate, UIPageV
         }
         
         let videoVC : VideoViewController = VideoViewController()
-        videoVC.videoIndex = self.currentIndex - 1
-        videoVC.view.backgroundColor = UIColor.white
+        videoVC.videoIndex = self.currentIndex
         return videoVC;
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let videoVC : VideoViewController = VideoViewController()
-        videoVC.videoIndex = self.currentIndex + 1
-        videoVC.view.backgroundColor = UIColor.white
+        videoVC.videoIndex = self.currentIndex
         return videoVC;
     }
 
@@ -64,9 +62,6 @@ class VideosViewController: ViewController,UIPageViewControllerDelegate, UIPageV
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let videoController : VideoViewController = pageViewController.viewControllers?[0] as! VideoViewController
         self.currentIndex = videoController.videoIndex!
-        UIView.animate(withDuration: 2.0) {
-            videoController.view.backgroundColor = UIColor.clear
-        }
     }
     
 }

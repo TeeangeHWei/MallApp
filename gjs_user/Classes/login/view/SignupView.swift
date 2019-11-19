@@ -5,7 +5,6 @@
 //  Created by xiaofeixia on 2019/8/23.
 //  Copyright © 2019 大杉网络. All rights reserved.
 //
-
 import UIKit
 
 class SignupView: UIView {
@@ -57,7 +56,6 @@ class SignupView: UIView {
         bodyView.subviews.forEach{$0.removeFromSuperview()}
         //邀请码或手机输入框
         invite = textFiled(tip: "请输入邀请码或邀请人手机号", y: 0)
-        
         inviteInfo = UIView(frame: CGRect(x: 20, y: 55, width: kScreenW - 40, height: 80))
         
         self.setStep(y: 145)
@@ -120,7 +118,7 @@ class SignupView: UIView {
         
         //手机输入框
         phone = textFiled(tip: "请输入手机号码", y: 55)
-        
+
         //按钮上边距40
         self.setStep(title : "请输入手机号码", y: 200)
         bodyView.frame = CGRect(x: 0, y: 60, width: kScreenW, height: 140)

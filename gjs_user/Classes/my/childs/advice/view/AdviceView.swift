@@ -85,7 +85,7 @@ class AdviceView: ViewController, UIImagePickerControllerDelegate, UINavigationC
         let a = Float(count) * Float(imgWidth)
         let b = Float(count) * 10
         let x = a + b + 10
-        box.frame = CGRect(x: CGFloat(x), y: 210, width: imgWidth, height: imgWidth)
+        box.frame = CGRect(x: CGFloat(x), y: (kScreenW*0.715), width: imgWidth, height: imgWidth)
         
         let img = UIImageView(image: image)
         img.layer.masksToBounds = true

@@ -5,7 +5,6 @@
 //  Created by xiaofeixia on 2019/8/24.
 //  Copyright © 2019 大杉网络. All rights reserved.
 //
-
 import UIKit
 
 @available(iOS 11.0, *)
@@ -15,7 +14,7 @@ class SignupViewController: UIViewController {
     var nickname : String?
     var avatar : String?
     private var step = 1
-    private let signupView = SignupView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH))
+    private let signupView = SignupView(frame: CGRect(x: 0, y: headerHeight+kCateTitleH, width: kScreenW, height: kScreenH))
     private var verifySign:String! = ""
     private var phoneSign:String! = ""
     private var parentId:String! = ""
@@ -23,12 +22,12 @@ class SignupViewController: UIViewController {
     //自定义头部
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
-        setNav(titleStr: "注册账号", titleColor: kMainTextColor, navItem: navigationItem, navController: navigationController)
-        let leftBtn = UIBarButtonItem(title: "上一步", style: .plain, target: self, action: #selector(backBefore))
-        leftBtn.tintColor = kHighOrangeColor
-        leftBtn.setTitleTextAttributes([NSAttributedString.Key.font: FontSize(14)], for: .normal)
-        self.navigationItem.leftBarButtonItem = leftBtn;
+//        navigationController?.navigationBar.isHidden = false
+//        setNav(titleStr: "注册账号", titleColor: kMainTextColor, navItem: navigationItem, navController: navigationController)
+//        let leftBtn = UIBarButtonItem(title: "上一步", style: .plain, target: self, action: #selector(backBefore))
+//        leftBtn.tintColor = kHighOrangeColor
+//        leftBtn.setTitleTextAttributes([NSAttributedString.Key.font: FontSize(14)], for: .normal)
+//        self.navigationItem.leftBarButtonItem = leftBtn;
     }
     
     @objc func backBefore(){
@@ -50,14 +49,48 @@ class SignupViewController: UIViewController {
         signupView.nextBtn.addTarget(self, action: #selector(nextStep), for: .touchUpInside)
         self.nextStep()
         self.view.addSubview(signupView)
+        setNavUi()
     }
 
+    func setNavUi(){
+        
+        navigationController?.navigationBar.isHidden = true
+        let topView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: headerHeight))
+        topView.backgroundColor = .clear
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: kStatuHeight, width: kScreenW, height: kNavigationBarHeight))
+        navBar.backgroundColor = .clear
+        let navItem = UINavigationItem()
+        let backBtn = UIBarButtonItem(title: "上一步", style: .plain, target: self, action: #selector(backBefore))
+        let title = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
+        title.text = "注册账号"
+        title.textAlignment = .center
+        title.textColor = .black
+        navItem.titleView = title
+        backBtn.tintColor = kHighOrangeColor
+        backBtn.setTitleTextAttributes([NSAttributedString.Key.font: FontSize(14)], for: .normal)
+        navItem.setLeftBarButton(backBtn, animated: true)
+        navBar.tintColor = .white
+        navBar.shadowImage = UIImage()
+        navBar.isTranslucent = true
+        navBar.pushItem(navItem, animated: true)
+        navBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.view.addSubview(topView)
+        topView.addSubview(navBar)
+        
+    }
     //下一步按钮
     @objc func nextStep() {
         self.signupView.activeBtn(flag: false)
         if step == 1{
-            signupView.firstStep()
-            signupView.invite.addTarget(self, action: #selector(getSuper), for: .editingChanged)
+            if UserDefaults.getIsShow() == 1{
+                signupView.firstStep()
+                signupView.invite.addTarget(self, action: #selector(getSuper), for: .editingChanged)
+            }else{
+                signupView.secondStep()
+                signupView.invite.addTarget(self, action: #selector(getSuper), for: .editingChanged)
+                signupView.phone.addTarget(self, action: #selector(checkPhone), for: .editingChanged)
+            }
+            
         }else if step == 2{
             signupView.secondStep()
             signupView.phone.addTarget(self, action: #selector(checkPhone), for: .editingChanged)
@@ -90,6 +123,7 @@ class SignupViewController: UIViewController {
                     self.signupView.superInfo(headerStr: data["headPortrait"].description, nickStr: data["nickName"].description)
                     self.signupView.activeBtn(flag: true)
                     self.parentId = data["id"].description
+                    print("dataid::::",self.parentId)
                     self.step = 2
                 }else{
                     self.signupView.superInfo()
@@ -194,12 +228,13 @@ class SignupViewController: UIViewController {
             "password" : signupView.password.text!,
             "phoneCode" : signupView.phoneCode.text!,
             "phoneSign" : self.phoneSign!,
-            "parentId" : self.parentId!,
+            "parentId" : (self.parentId != "") ? self.parentId! : "1015",
             "openId" : self.openId ?? "",
             "headImg" : self.avatar ?? "",
             "nickName" : self.nickname ?? ""
         ],
         success: {(res, data) in
+            print("data::::",data)
             IDLoading.id_dismissWait()
             IDToast.id_show(msg: "注册成功", success:.success)
             self.navigationController?.pushViewController(LoginCommonViewController(), animated: true)

@@ -36,6 +36,8 @@ let headerHeight = kStatuHeight + kNavigationBarHeight
 var classifyTitle : String?
 // 详情页宝贝id
 var detailId : Int?
+// 拼多多宝贝详情页id
+var goodsId : Int?
 // 要搜索的字符串
 var searchStr : String?
 

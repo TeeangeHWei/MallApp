@@ -9,55 +9,92 @@
 import UIKit
 import AVKit
 import BMPlayer
+import NVActivityIndicatorView
+
 class VideoViewController: ViewController {
     open var videoIndex : Int?
-    weak var slider:UISlider!
-    weak var videoView : UIView!
-    var playerItem : AVPlayerItem?
     var playing = true
-    var playerViewController : AVPlayerViewController!
     var startImg : UIButton?
-    var singleTouch: UITapGestureRecognizer!
     var BMplayer = BMPlayer(customControlView: progressView())
+    //播放器状态
+    var state : BMPlayerState?
     let url = URL.init(string: "http://video.haodanku.com/604b62bd6b74e906079f3aaab5019a0e.mp4?attname=1573625176.mp4")
-    
+    var player: BMPlayer!
     override func viewDidLoad() {
         super.viewDidLoad()
+        BMplayer.removeGestureRecognizer(BMplayer.panGesture)
         let nav = customNav(titleStr: "", titleColor: kMainTextColor, border: false)
         self.view.addSubview(nav)
+        // 是否打印日志，默认false
+        BMPlayerConf.allowLog = true
+        // 是否自动播放，默认true
+        BMPlayerConf.shouldAutoPlay = true
+        BMPlayerConf.loaderType  = NVActivityIndicatorType.ballBeat
         vdieoUI()
 
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-//        removeObserver()
+        
+        
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        BMplayer.pause(allowAutoPlay: true)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      // If use the slide to back, remember to call this method
+      // 使用手势返回的时候，调用下面方法
+     if state == BMPlayerState.playedToTheEnd{
+         BMplayer.play()
+     }
+      print("调用了viewWillAppear")
+      BMplayer.play()
+    }
+    
     func vdieoUI(){
         view.addSubview(BMplayer)
-        BMplayer.snp.makeConstraints { (make) in
-            make.top.left.bottom.right.equalToSuperview()
-            make.width.equalTo(kScreenW)
-            make.height.equalTo(kScreenH)
-        }
-        BMplayer.videoGravity = AVLayerVideoGravity.resizeAspect
+        BMplayer.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH)
+//        BMplayer.videoGravity = AVLayerVideoGravity.resize
+        
         let asset = BMPlayerResource(url: URL(string: "http://video.haodanku.com/604b62bd6b74e906079f3aaab5019a0e.mp4?attname=1573625176.mp4")!,
                                      name: "")
         BMplayer.setVideo(resource: asset)
+        NotificationCenter.default.addObserver(self,
+                                                 selector: #selector(applicationDidEnterBackground),
+                                                 name: UIApplication.didEnterBackgroundNotification,
+                                                 object: nil)
+          
+        NotificationCenter.default.addObserver(self,
+                                                 selector: #selector(applicationWillEnterForeground),
+                                                 name: UIApplication.willEnterForegroundNotification,
+                                                 object: nil)
+        }
+        
+        @objc func applicationWillEnterForeground() {
+          
+        }
+        
+        @objc func applicationDidEnterBackground() {
+          BMplayer.pause(allowAutoPlay: false)
+        }
         
     }
-}
+    
         
 extension VideoViewController : BMPlayerDelegate{
     // Call when player orinet changed
     func bmPlayer(player: BMPlayer, playerOrientChanged isFullscreen: Bool) {
-      player.snp.remakeConstraints { (make) in
+      BMplayer.snp.remakeConstraints { (make) in
         make.top.equalTo(view.snp.top)
         make.left.equalTo(view.snp.left)
         make.right.equalTo(view.snp.right)
         if isFullscreen {
           make.bottom.equalTo(view.snp.bottom)
         } else {
-          make.height.equalTo(view.snp.width).multipliedBy(9.0/16.0).priority(500)
+          make.height.equalTo(view.snp.width)
         }
       }
     }

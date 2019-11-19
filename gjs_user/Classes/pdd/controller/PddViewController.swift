@@ -20,6 +20,7 @@ class PddViewController: ViewController {
     fileprivate var navigationView:UIView!
     let kcycleViewHeight :CGFloat = 156
     var PddTableHeaderViewHeight: Int = Int(kScreenW * 0.85)
+    var pddCycleModel = [cycleScrollModel]()
     var PddheightForHeaderInSection: Int = 50
     var titles2 = [String]()
     let imgArr = ["pdd-1","pdd-2","pdd-3","pdd-4"]
@@ -27,11 +28,13 @@ class PddViewController: ViewController {
     var searchPageView : SearchPageView?
     var isHeaderRefreshed = false
     var isNeedHeader = false
+    var imglist = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigation()
         view.backgroundColor = .white
         PddGetData()
+        pddCycleScroll()
         setui()
         
         
@@ -56,9 +59,17 @@ class PddViewController: ViewController {
     }
     //MARK:-- 添加pagingViewUI
     func setui(){
-        PdduserHeaderContainerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: CGFloat(PddTableHeaderViewHeight)))
+        if UserDefaults.getIsShow() == 1{
+           PdduserHeaderContainerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: CGFloat(PddTableHeaderViewHeight)))
+        }else{
+            PdduserHeaderContainerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: CGFloat(PddTableHeaderViewHeight - 93)))
+        }
+        
         PddHeaderView = pagingTableHeaderView(frame: PdduserHeaderContainerView.bounds)
         PddHeaderView.PagingnaviController = navigationController
+//        PddHeaderView.cycleView.setUrlsGroup(imglist)
+        PddHeaderView.urlimg = pddCycleModel
+        print("imglist::",imglist)
         PdduserHeaderContainerView.addSubview(PddHeaderView)
         //1、初始化JXSegmentedView
         PddsegmentedView = JXSegmentedView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: CGFloat(PddheightForHeaderInSection)))
@@ -108,6 +119,24 @@ class PddViewController: ViewController {
             
             print("titles",self.titles2)
             
+        }, error: {
+            
+        }, failure: {
+            
+        })
+    }
+    //MARK: --  轮播图请求
+     func pddCycleScroll(){
+        AlamofireUtil.post(url: "/user/public/slideshow/list", param: ["pageNo": 1,"pageSize": 10,"specialShowType":3], success: { (res, data) in
+            if UserDefaults.getIsShow() == 1{
+                self.pddCycleModel = cycleScrollList.deserialize(from: data.description)!.list!
+                
+                for item in self.pddCycleModel{
+                    self.imglist.append("https://www.ganjinsheng.com\(item.img!)")
+                }
+
+                self.PddpagingView.mainTableView.reloadData()
+            }
         }, error: {
             
         }, failure: {

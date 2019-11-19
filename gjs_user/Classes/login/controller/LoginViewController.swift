@@ -24,7 +24,7 @@ class LoginViewController: ViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
 //        setNav(titleStr: "手机登录", titleColor: kMainTextColor, navItem: navigationItem, navController: navigationController)
     }
     

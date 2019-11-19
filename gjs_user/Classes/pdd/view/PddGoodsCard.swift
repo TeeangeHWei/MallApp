@@ -305,7 +305,7 @@ class PddGoodsCard : UIView {
     
     @objc func toDetail (sender : UITapGestureRecognizer) {
         var vc = PddDetailController()
-        vc.goodsId = String(sender.view!.tag)
+        goodsId = sender.view!.tag
         self.navC!.pushViewController(vc, animated: true)
     }
     

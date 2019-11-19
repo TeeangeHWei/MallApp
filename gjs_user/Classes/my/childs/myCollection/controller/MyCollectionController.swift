@@ -23,7 +23,7 @@ class MyCollectionController: ViewController, platformDelegate {
     var isLoading : Bool = false
     var isFinish : Bool = false
     let loadingView = UIActivityIndicatorView(style: .white)
-    let nodata = UIView(frame: CGRect(x: 0, y: 100, width: Int(kScreenW), height: 200))
+    let nodata = UIView(frame: CGRect(x: 0, y: Int(headerHeight + kNavigationBarHeight), width: Int(kScreenW), height: 200))
     let noMore = UILabel(frame: CGRect(x: 0, y: 0, width: Int(kScreenW), height: 50))
     
     let rightBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 30))

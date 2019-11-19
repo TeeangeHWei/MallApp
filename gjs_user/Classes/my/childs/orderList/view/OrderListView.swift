@@ -391,7 +391,7 @@ class OrderListView: ViewController, UIScrollViewDelegate, platformDelegate {
             self.navigationController!.pushViewController(DetailController(), animated: true)
         } else if platform == 1 {
             let vc = PddDetailController()
-            vc.goodsId = String(sender.view!.tag)
+            goodsId = sender.view!.tag
             self.navigationController!.pushViewController(vc, animated: true)
         }
     }

@@ -126,12 +126,14 @@ class tableListBaseView: ViewController {
         //轮播图
         let xx = UIView.init(frame: CGRect(x: 0, y: 15, width: ScreenW , height: UIScreen.main.bounds.width * 0.393 + 20))
         swiper = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 20, y: 15, width: ScreenW - 35, height: UIScreen.main.bounds.width * 0.393), didSelectItemAtIndex: { index in
-            let vc = BannerWebViewController()
-            vc.webAddress = "https://www.ganjinsheng.com/user/null"
-            vc.toUrl = "\(self.cycscroll[index].appUrl ?? "")123"
-            print("toUrl:::::::::::::::::::","\(self.cycscroll[index].appUrl ?? "")123")
-            vc.headerTitle = self.cycscroll[index].adTitle!
-            self.naviController?.pushViewController(vc, animated: true)
+            if UserDefaults.getIsShow() == 1{
+                let vc = BannerWebViewController()
+                vc.webAddress = "https://www.ganjinsheng.com/user/null"
+                vc.toUrl = "\(self.cycscroll[index].appUrl ?? "")123"
+                print("toUrl:::::::::::::::::::","\(self.cycscroll[index].appUrl ?? "")123")
+                vc.headerTitle = self.cycscroll[index].adTitle!
+                self.naviController?.pushViewController(vc, animated: true)
+            }
         })
         let bgimg = UIImageView.init(frame: CGRect(x: 0, y: 0,   width: ScreenW, height: ScreenW * 0.35))
         bgimg.image = UIImage(named: "WechatIMG30")
@@ -231,7 +233,7 @@ extension tableListBaseView{
                     }
                 }
                 var imglist = [String]()
-                imglist.append("https://www.ganjinsheng.com\(self.cycscroll[0].img!)")
+                imglist.append("https://www.ganjinsheng.com/files/user/slide/20191115092309.png")
                 self.swiper?.imagePaths = imglist
                 self.tableViewhome.reloadData()
             }
@@ -422,7 +424,11 @@ extension tableListBaseView : UITableViewDelegate,UITableViewDataSource{
         }else if section == 4{
             return 1
         }else if section == 5{
-            return 1
+            if UserDefaults.getIsShow() == 1{
+                return 0
+            }else{
+                return 0
+            }
         }else{
             return self.newGoodsitem.count
         }
@@ -447,6 +453,7 @@ extension tableListBaseView : UITableViewDelegate,UITableViewDataSource{
             
         }else if indexPath.section == 5{
             return 270
+            
         }else{
             if self.goodsitem.count > 0 {
                 if indexPath.row == 0 {

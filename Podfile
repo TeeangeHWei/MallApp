@@ -4,6 +4,7 @@
 target 'gjs_user' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  pod 'JPush'#极光推送
   pod 'IDealist'
   pod 'LLCycleScrollView'
   pod 'Alamofire'
@@ -26,6 +27,8 @@ target 'gjs_user' do
   pod 'WKCookieWebView','~>2.0'
   pod 'FWPopupView'
   pod 'SwiftDate'
+#  pod 'SDWebImage'
+  pod 'BMPlayer', '~> 1.3.0'
   # Pods for gjs_user
 
 end

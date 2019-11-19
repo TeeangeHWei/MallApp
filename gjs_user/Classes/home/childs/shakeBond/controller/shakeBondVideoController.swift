@@ -40,10 +40,8 @@ class shakeBondVideoController: ViewController, UIPageViewControllerDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 创建搜索页，视频列表页和用户详情页
-//        let searchVC : SearchViewController = SearchViewController()
+
         let videosVC : VideosViewController = VideosViewController()
-//        let userInfoVC : UserInfoViewController = UserInfoViewController()
         self.viewControllers = [videosVC]
         
         // 创建UIPageViewController

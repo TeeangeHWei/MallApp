@@ -20,3 +20,15 @@ struct MyBannerList : HandyJSON {
     init() {}
     
 }
+
+
+struct notice : HandyJSON{
+    var id : String?
+    var url : String?
+    var img : String?
+}
+struct noticeList : HandyJSON {
+    var list : [notice]?
+    init() {}
+    
+}

@@ -20,4 +20,11 @@
 //新浪微博SDK头文件
 #import "WeiboSDK.h"
 #import "MJRefresh.h"
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import "JPUSHService.h"
+// iOS10注册APNs所需头文件
+#import <UserNotifications/UserNotifications.h>
+#endif
+
 #endif /* BridgingHeader_h */
+

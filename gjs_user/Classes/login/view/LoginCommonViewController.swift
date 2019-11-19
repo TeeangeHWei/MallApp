@@ -3,26 +3,34 @@
 //  gjs_user
 //
 //  Created by xiaofeixia on 2019/8/23.
-//  Copyright © 2019 大杉网络. All rights reserved.
+//  Copyright © 2019 大杉网络. All rights reserved.let
 //
 
 import UIKit
 
 @available(iOS 11.0, *)
 class LoginCommonViewController: UIViewController {
-    
+    let mainView = UIView()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
-        let leftBtn = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(toHome))
-        leftBtn.tintColor = .white
-        self.navigationItem.leftBarButtonItem = leftBtn;
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.backgroundColor = .clear
+//        navigationController?.navigationBar.isHidden = false
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//
+//        let leftBtn = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(toHome))
+//        leftBtn.tintColor = .white
+//        self.navigationItem.leftBarButtonItem = leftBtn;
+//        navigationController?.navigationBar.isTranslucent = true
+//        navigationController?.navigationBar.backgroundColor = .clear
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
 
     @objc func toHome(){
@@ -38,7 +46,8 @@ class LoginCommonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mainView = UIView()
+        
+        
         mainView.frame = self.view.bounds
         mainView.backgroundColor = .white
         let bg = UIImageView(image: UIImage(named: "loginBg"))
@@ -166,8 +175,26 @@ class LoginCommonViewController: UIViewController {
             mainView.addSubview(wechatBox)
         }
         self.view.addSubview(mainView)
+        setNav()
     }
     
+    func setNav(){
+        navigationController?.navigationBar.isHidden = true
+        let topView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: headerHeight))
+        topView.backgroundColor = .clear
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: kStatuHeight, width: kScreenW, height: kNavigationBarHeight))
+        navBar.backgroundColor = .clear
+        let navItem = UINavigationItem()
+        let backBtn = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(toHome))
+        navItem.setLeftBarButton(backBtn, animated: true)
+        navBar.tintColor = .white
+        navBar.shadowImage = UIImage()
+        navBar.isTranslucent = true
+        navBar.pushItem(navItem, animated: true)
+        navBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.view.addSubview(topView)
+        topView.addSubview(navBar)
+    }
     
     @objc func toView(sender:UITapGestureRecognizer){
         if sender.view?.tag == 0{
@@ -204,7 +231,7 @@ class LoginCommonViewController: UIViewController {
     }
     // 微信登录
     func wechatLogin (_ id : String, _ nickname : String, _ avatar : String) {
-        IDLoading.id_showWithWait()
+//        IDLoading.id_showWithWait()
         AlamofireUtil.post(url:"/user/autho/public/weChatAutho", param: [
             "openId" : id
         ],

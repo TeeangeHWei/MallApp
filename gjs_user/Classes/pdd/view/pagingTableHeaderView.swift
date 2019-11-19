@@ -17,14 +17,24 @@ class pagingTableHeaderView: UIView,UICollectionViewDelegate,UICollectionViewDat
     var collectionView : UICollectionView?
     var PagingnaviController : UINavigationController?
     let images = ["pdd-1","pdd-3","pdd-5","pdd-4"]
-        
+    let chageImages = ["pdd-1","pdd-5"]
+    var urlimg : Array<cycleScrollModel>!{
+        didSet{
+            
+        }
+    }
     override init(frame: CGRect) {
         let kcycleViewHeight :CGFloat = 156
         
         super.init(frame: frame)
         let cycleView = ZCycleView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenW * 240/640))
         
-            cycleView.setImagesGroup([#imageLiteral(resourceName: "pdd-banner")])
+//
+        if UserDefaults.getIsShow() == 0{
+           cycleView.setImagesGroup([#imageLiteral(resourceName: "pdd-banner")])
+        }else{
+           cycleView.setUrlsGroup(["https://www.ganjinsheng.com/files/user/slide/20191115092309.png"])
+        }
         
         //        cycleView.pageControlItemSize = CGSize(width: 16, height: 4)
         //        cycleView.pageControlItemRadius = 0
@@ -42,7 +52,11 @@ class pagingTableHeaderView: UIView,UICollectionViewDelegate,UICollectionViewDat
         layout.minimumInteritemSpacing = 2
         layout.itemSize = CGSize(width: (kScreenW * 1.48 - 10)/3, height: 85)
         layout.sectionInset = UIEdgeInsets(top: 2, left: 4, bottom: 2, right: 4)
-        collectionView = UICollectionView.init(frame:CGRect(x: 0, y: kScreenW * 0.38, width: kScreenW, height: kcycleViewHeight + 30), collectionViewLayout: layout)
+        if UserDefaults.getIsShow() == 1{
+            collectionView = UICollectionView.init(frame:CGRect(x: 0, y: kScreenW * 0.38, width: kScreenW, height: kcycleViewHeight + 30), collectionViewLayout: layout)
+        }else{
+            collectionView = UICollectionView.init(frame:CGRect(x: 0, y: kScreenW * 0.38, width: kScreenW, height: (kcycleViewHeight + 30)/2), collectionViewLayout: layout)
+        }
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.backgroundColor = .white
@@ -60,9 +74,12 @@ class pagingTableHeaderView: UIView,UICollectionViewDelegate,UICollectionViewDat
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return self.dataArr.count
-        return self.images.count
+        if UserDefaults.getIsShow() == 1{
+            return self.images.count
+        }else{
+            return self.chageImages.count
+        }
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collID", for: indexPath)
         if indexPath.section == 0{
@@ -78,7 +95,12 @@ class pagingTableHeaderView: UIView,UICollectionViewDelegate,UICollectionViewDat
                 img.layer.cornerRadius = 5
                 img.layer.masksToBounds = true
                 img.backgroundColor = .red
-                img.image = UIImage(named: images[indexPath.item])
+                if UserDefaults.getIsShow() == 1{
+                    img.image = UIImage(named: images[indexPath.item])
+                }else{
+                    img.image = UIImage(named: chageImages[indexPath.item])
+                }
+                
                 img.snp.makeConstraints { (make) in
 //                    make.top.equalToSuperview()
 //                    make.left.equalToSuperview()
@@ -97,19 +119,29 @@ class pagingTableHeaderView: UIView,UICollectionViewDelegate,UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = outRankViewController()
-
-        if indexPath.row == 0{
-            PagingnaviController?.pushViewController(vc, animated: true)
+        if UserDefaults.getIsShow() == 1{
+            if indexPath.row == 0{
+                PagingnaviController?.pushViewController(vc, animated: true)
+            }
+            if indexPath.row == 1 {
+                PagingnaviController?.pushViewController(PddRedPacViewController(), animated: true)
+            }
+            if indexPath.row == 3 {
+                jumpToH5Shop()
+            }
+            if indexPath.row == 2 {
+                PagingnaviController?.pushViewController(GoodShotViewController(), animated: true)
+            }
+        }else{
+            if indexPath.row == 0{
+               PagingnaviController?.pushViewController(vc, animated: true)
+           }
+            if indexPath.row == 1 {
+               PagingnaviController?.pushViewController(GoodShotViewController(), animated: true)
+           }
+            
         }
-        if indexPath.row == 1 {
-            PagingnaviController?.pushViewController(PddRedPacViewController(), animated: true)
-        }
-        if indexPath.row == 3 {
-            jumpToH5Shop()
-        }
-        if indexPath.row == 2 {
-            PagingnaviController?.pushViewController(GoodShotViewController(), animated: true)
-        }
+        
     }
     
     func jumpToH5Shop () {

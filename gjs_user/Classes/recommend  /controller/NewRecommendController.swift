@@ -209,7 +209,7 @@ extension NewRecommendController : UITableViewDelegate,UITableViewDataSource{
         cell.backgroundColor = .white
         let data = newRecommendsitem[indexPath.row]
         cell.releaseTime!.text = getDateFromTimeStamp10(timeStamp: data.show_time!).format("yyyy/MM/dd HH:mm:ss")
-        cell.shotitemid = data.itemid
+        cell.shotitemid = data.itemid!
         cell.shotitemtitle = data.itemtitle
         cell.shareNum?.text = data.dummy_click_statistics!
         cell.shotitemData = newRecommendsitem[indexPath.row]

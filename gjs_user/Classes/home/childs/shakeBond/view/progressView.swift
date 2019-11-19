@@ -18,29 +18,29 @@ class progressView: BMPlayerControlView {
         */
        override func customizeUIComponents() {
            // just make the view hidden
-           topMaskView.isHidden = true
-           chooseDefinitionView.isHidden = true
+//        topMaskView.isHidden = true
+        chooseDefinitionView.isHidden = true
+        mainMaskView.isHidden = true
+       // or remove from superview
+        playButton.removeFromSuperview()
+        currentTimeLabel.removeFromSuperview()
+        totalTimeLabel.removeFromSuperview()
            
-           // or remove from superview
-           playButton.removeFromSuperview()
-           currentTimeLabel.removeFromSuperview()
-           totalTimeLabel.removeFromSuperview()
-           
-           timeSlider.removeFromSuperview()
-           fullscreenButton.removeFromSuperview()
+        timeSlider.removeFromSuperview()
+        fullscreenButton.removeFromSuperview()
            
            // If needs to change position remake the constraint
-           progressView.snp.remakeConstraints { (make) in
-               make.bottom.left.right.equalTo(bottomMaskView)
-               make.height.equalTo(2)
-           }
+//           progressView.snp.remakeConstraints { (make) in
+//               make.bottom.left.right.equalTo(bottomMaskView)
+//               make.height.equalTo(2)
+//           }
            
            // Add new items and constraint
-           bottomMaskView.addSubview(playTimeUIProgressView)
-           playTimeUIProgressView.snp.makeConstraints { (make) in
-               make.bottom.left.right.equalTo(bottomMaskView)
-               make.height.equalTo(2)
-           }
+//           bottomMaskView.addSubview(playTimeUIProgressView)
+//           playTimeUIProgressView.snp.makeConstraints { (make) in
+//               make.bottom.left.right.equalTo(bottomMaskView)
+//               make.height.equalTo(2)
+//           }
            
            playTimeUIProgressView.tintColor      = UIColor.red
            playTimeUIProgressView.trackTintColor = UIColor.clear
@@ -55,7 +55,7 @@ class progressView: BMPlayerControlView {
        }
        
        override func updateUI(_ isForFullScreen: Bool) {
-           topMaskView.isHidden = true
+//           topMaskView.isHidden = true
            chooseDefinitionView.isHidden = true
        }
        

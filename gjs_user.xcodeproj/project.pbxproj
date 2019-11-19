@@ -47,10 +47,10 @@
 		5C68979B23019AEC00BDB014 /* ZJPopupBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68979623019AEC00BDB014 /* ZJPopupBaseView.swift */; };
 		5C68979C23019AEC00BDB014 /* ZJPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68979723019AEC00BDB014 /* ZJPopupView.swift */; };
 		5C68979D23019AEC00BDB014 /* ZJAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68979823019AEC00BDB014 /* ZJAlertController.swift */; };
+		5C7B752323828238009D6B76 /* noticeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B752223828238009D6B76 /* noticeWebView.swift */; };
 		5C9BF4AD2318F8DF004EF9BA /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9BF4AC2318F8DE004EF9BA /* config.swift */; };
 		5C9BF4B12318FDD7004EF9BA /* cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9BF4B02318FDD7004EF9BA /* cache.swift */; };
 		5C9E4AE2230E7F6C00BF4011 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D229618C230A79DA00FA2EEB /* CollectionHeaderView.swift */; };
-		5C9F812F237C07EF00CEA64B /* shakePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F812E237C07EF00CEA64B /* shakePlayer.swift */; };
 		5C9F8131237C090B00CEA64B /* HeaderFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F8130237C090A00CEA64B /* HeaderFile.swift */; };
 		5C9F8160237D573A00CEA64B /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F815F237D573A00CEA64B /* progressView.swift */; };
 		5CB687EC234C2E7E0092E44A /* BaseUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB687E9234C2E7D0092E44A /* BaseUICollectionView.swift */; };
@@ -76,9 +76,7 @@
 		5CFD92F4237912760017EA5A /* HCFallsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD92F3237912750017EA5A /* HCFallsFlowLayout.swift */; };
 		5CFD92F6237913150017EA5A /* homeShakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD92F5237913150017EA5A /* homeShakeCell.swift */; };
 		5CFD92FE237AB0860017EA5A /* shakeBondVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD92FD237AB0860017EA5A /* shakeBondVideoController.swift */; };
-		5CFD930C237B91DE0017EA5A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD9308237B91DD0017EA5A /* SearchViewController.swift */; };
 		5CFD930D237B91DE0017EA5A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD9309237B91DD0017EA5A /* VideoViewController.swift */; };
-		5CFD930E237B91DE0017EA5A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD930A237B91DE0017EA5A /* UserInfoViewController.swift */; };
 		5CFD930F237B91DE0017EA5A /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD930B237B91DE0017EA5A /* VideosViewController.swift */; };
 		5CFE75F3235813A1000C765F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE75C7235813A1000C765F /* MJRefreshAutoFooter.m */; };
 		5CFE75F4235813A1000C765F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE75C9235813A1000C765F /* MJRefreshBackFooter.m */; };
@@ -361,11 +359,12 @@
 		5C68979623019AEC00BDB014 /* ZJPopupBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJPopupBaseView.swift; sourceTree = "<group>"; };
 		5C68979723019AEC00BDB014 /* ZJPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJPopupView.swift; sourceTree = "<group>"; };
 		5C68979823019AEC00BDB014 /* ZJAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJAlertController.swift; sourceTree = "<group>"; };
+		5C7B752223828238009D6B76 /* noticeWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeWebView.swift; sourceTree = "<group>"; };
 		5C9BF4AC2318F8DE004EF9BA /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		5C9BF4B02318FDD7004EF9BA /* cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cache.swift; sourceTree = "<group>"; };
-		5C9F812E237C07EF00CEA64B /* shakePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shakePlayer.swift; sourceTree = "<group>"; };
 		5C9F8130237C090A00CEA64B /* HeaderFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFile.swift; sourceTree = "<group>"; };
 		5C9F815F237D573A00CEA64B /* progressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
+		5CA5653A237F944400D47F0F /* gjs_user.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gjs_user.entitlements; sourceTree = "<group>"; };
 		5CB687E9234C2E7D0092E44A /* BaseUICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUICollectionView.swift; sourceTree = "<group>"; };
 		5CB687EE234C30E50092E44A /* DFHorizontalPageLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHorizontalPageLayout.swift; sourceTree = "<group>"; };
 		5CB687FA234C5AB90092E44A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -389,9 +388,7 @@
 		5CFD92F3237912750017EA5A /* HCFallsFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCFallsFlowLayout.swift; sourceTree = "<group>"; };
 		5CFD92F5237913150017EA5A /* homeShakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeShakeCell.swift; sourceTree = "<group>"; };
 		5CFD92FD237AB0860017EA5A /* shakeBondVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shakeBondVideoController.swift; sourceTree = "<group>"; };
-		5CFD9308237B91DD0017EA5A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5CFD9309237B91DD0017EA5A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		5CFD930A237B91DE0017EA5A /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		5CFD930B237B91DE0017EA5A /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		5CFE75C6235813A1000C765F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		5CFE75C7235813A1000C765F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -832,8 +829,6 @@
 		5CFD92F12379100A0017EA5A /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				5CFD9308237B91DD0017EA5A /* SearchViewController.swift */,
-				5CFD930A237B91DE0017EA5A /* UserInfoViewController.swift */,
 				5CFD930B237B91DE0017EA5A /* VideosViewController.swift */,
 				5CFD9309237B91DD0017EA5A /* VideoViewController.swift */,
 				5CFD92EF23790FFF0017EA5A /* shakeBondViewController.swift */,
@@ -846,7 +841,6 @@
 			isa = PBXGroup;
 			children = (
 				5CFD92F5237913150017EA5A /* homeShakeCell.swift */,
-				5C9F812E237C07EF00CEA64B /* shakePlayer.swift */,
 				5C9F815F237D573A00CEA64B /* progressView.swift */,
 			);
 			path = view;
@@ -1625,6 +1619,7 @@
 			isa = PBXGroup;
 			children = (
 				D229620F230C22C000FA2EEB /* NoticeView.swift */,
+				5C7B752223828238009D6B76 /* noticeWebView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -2224,6 +2219,7 @@
 		D2B9F40422FBFBAC006E682A /* gjs_user */ = {
 			isa = PBXGroup;
 			children = (
+				5CA5653A237F944400D47F0F /* gjs_user.entitlements */,
 				5C5F4C792351B44800B153C8 /* yw_1222.jpg */,
 				D2A58B9C23473F0D00AA78D1 /* ocFiles */,
 				D2A58B9B23473EE900AA78D1 /* appDelegate */,
@@ -3028,7 +3024,6 @@
 				FB8081D82348FA1A006CA95E /* ShareSdkModel.swift in Sources */,
 				D2DB5BD123384BE30078AE70 /* ShareGoodsItem.swift in Sources */,
 				D2B094A2231B9FCF00080743 /* RouseFooterView.swift in Sources */,
-				5C9F812F237C07EF00CEA64B /* shakePlayer.swift in Sources */,
 				D2B0972E2323ABAA00080743 /* test.m in Sources */,
 				D2B094EB231F9E1700080743 /* RightClassify.swift in Sources */,
 				D2162E7D2315369F00F092F5 /* ShareView.swift in Sources */,
@@ -3095,7 +3090,6 @@
 				D24118812349F1E800DA14D8 /* GoodsShareController.swift in Sources */,
 				D2B094BD231F608200080743 /* LeftClassify.swift in Sources */,
 				D23BB1C32329260C00087216 /* CheckBoxView.swift in Sources */,
-				5CFD930E237B91DE0017EA5A /* UserInfoViewController.swift in Sources */,
 				FB5654A52331FFA700806C37 /* OrderModel.swift in Sources */,
 				FB77CCB2230BD08D003AED24 /* RetrieveResultView.swift in Sources */,
 				D2B094AC231D0B3800080743 /* SmsFooter.swift in Sources */,
@@ -3113,7 +3107,6 @@
 				5CF601D6231E5034008C36FF /* recommendTableViewCell.swift in Sources */,
 				D2296227230E6A9B00FA2EEB /* PrivateShopView.swift in Sources */,
 				D2DB5B84232DE95B0078AE70 /* SearchPageView.swift in Sources */,
-				5CFD930C237B91DE0017EA5A /* SearchViewController.swift in Sources */,
 				D22961CE230A79DA00FA2EEB /* channlViewCell.swift in Sources */,
 				D2B9F43822FD9B29006E682A /* HWCommon.swift in Sources */,
 				D2B094F62320B9F700080743 /* DetailModel.swift in Sources */,
@@ -3158,6 +3151,7 @@
 				5CFD92F4237912760017EA5A /* HCFallsFlowLayout.swift in Sources */,
 				5C5530012359C4F400F63E00 /* GoodShotTableViewCell.swift in Sources */,
 				FBC9E5CD230FB72B00B13239 /* ForgetView.swift in Sources */,
+				5C7B752323828238009D6B76 /* noticeWebView.swift in Sources */,
 				D22961EB230A805400FA2EEB /* AlipayView.swift in Sources */,
 				5CF601D2231E0338008C36FF /* YPRollNoticeView.swift in Sources */,
 				D2B094A4231BB18E00080743 /* ToRouseView.swift in Sources */,
@@ -3434,9 +3428,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = gjs_user/gjs_user.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0;
-				DEVELOPMENT_TEAM = F5YQC4JMV3;
+				DEVELOPMENT_TEAM = CWH7WRAZJ2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3549,7 +3544,7 @@
 					"-lstdc++",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dashan.ganjinsheng-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dashan.gjs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_ENABLE_BATCH_MODE = NO;
@@ -3567,9 +3562,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = gjs_user/gjs_user.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0;
-				DEVELOPMENT_TEAM = F5YQC4JMV3;
+				DEVELOPMENT_TEAM = CWH7WRAZJ2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3682,7 +3678,7 @@
 					"-lstdc++",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dashan.ganjinsheng-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dashan.gjs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_ENABLE_BATCH_MODE = NO;

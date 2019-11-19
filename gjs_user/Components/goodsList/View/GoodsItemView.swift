@@ -318,7 +318,13 @@ class GoodsItemView: UIView {
     
     @objc func toDetail (sender : UITapGestureRecognizer) {
         detailId = sender.view?.tag
-        self.navC!.pushViewController(DetailController(), animated: true)
+        goodsId = sender.view?.tag
+        if platformIndex == 0 {
+            self.navC!.pushViewController(DetailController(), animated: true)
+        } else {
+            self.navC!.pushViewController(PddDetailController(), animated: true)
+        }
+        
     }
     
 }

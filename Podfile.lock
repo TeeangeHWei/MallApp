@@ -2,12 +2,22 @@ PODS:
   - Alamofire (4.9.0)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
+  - BMPlayer (1.3.0):
+    - BMPlayer/Full (= 1.3.0)
+  - BMPlayer/Core (1.3.0)
+  - BMPlayer/Full (1.3.0):
+    - BMPlayer/Core
+    - NVActivityIndicatorView (~> 4.7.0)
+    - SnapKit (~> 5.0.0)
   - FWPopupView (4.0.8):
     - SnapKit
   - GTMRefresh (1.3.6)
   - HandyJSON (5.0.0)
   - IDealist (0.0.7):
     - JXSegmentedView (= 0.0.4)
+  - JCore (2.1.2)
+  - JPush (3.2.4):
+    - JCore (< 3.0.0, >= 2.0.0)
   - JXPhotoBrowser (2.2.5):
     - JXPhotoBrowser/Kingfisher (= 2.2.5)
   - JXPhotoBrowser/Core (2.2.5)
@@ -51,6 +61,9 @@ PODS:
     - mob_sharesdk/ShareSDK
     - MOBFoundation
   - MOBFoundation (3.2.6)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -69,10 +82,12 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - BMPlayer (~> 1.3.0)
   - FWPopupView
   - GTMRefresh
   - HandyJSON
   - IDealist
+  - JPush
   - JXPhotoBrowser
   - JXPhotoBrowser/KingfisherWebP
   - LLCycleScrollView
@@ -94,10 +109,13 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - BMPlayer
     - FWPopupView
     - GTMRefresh
     - HandyJSON
     - IDealist
+    - JCore
+    - JPush
     - JXPhotoBrowser
     - JXSegmentedView
     - Kingfisher
@@ -107,6 +125,7 @@ SPEC REPOS:
     - MBProgressHUD
     - mob_sharesdk
     - MOBFoundation
+    - NVActivityIndicatorView
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -121,10 +140,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  BMPlayer: 92a1c2a721694ba6ab107661e7aff670909671c6
   FWPopupView: 8357f7ab0185e1dcaaf888fbc8ee81ab8dccab72
   GTMRefresh: 9231cbdc1dca88d0a29daead8d6bd83314aa84dc
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   IDealist: 4b037c31878046980cb8c53d73238e1dd6e1f14e
+  JCore: 1a426120b510cdebfd67b82bfb9483238ee09413
+  JPush: 29466e5f30dbd703f640d70540e411e829cac1fa
   JXPhotoBrowser: f10a74ee342c55dbe381d056abfe7611c1e8f4e3
   JXSegmentedView: 2b036fc37f26fbd369f79b8953c610efe19bd529
   Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
@@ -134,6 +156,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   mob_sharesdk: 1f9c5b4e252296e7d3571e5f8e7ca13ea305f924
   MOBFoundation: 08c456357888e4c984fba23bbf04cfd2f4fc1e02
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
@@ -145,6 +168,6 @@ SPEC CHECKSUMS:
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: 5d1dc899cecd5946e5a758a0c3997704a4b48d01
 
-PODFILE CHECKSUM: 0c579cb70d8b3d49553b4d644e7ac0e970cac02a
+PODFILE CHECKSUM: 78756d3db77358d04b4026113051212c7df5933e
 
 COCOAPODS: 1.7.5

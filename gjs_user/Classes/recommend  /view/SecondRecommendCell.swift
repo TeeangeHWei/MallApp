@@ -18,7 +18,7 @@ class SecondRecommendCell: UITableViewCell {
     var shareText = UILabel()
     var copyText : String?
     var collectionView : UICollectionView!
-    var shotitemid : String?
+    var shotitemid = String()
     var shotitemtitle : String?
     var price = UILabel()
     var phototag = Int()
@@ -366,7 +366,7 @@ extension SecondRecommendCell {
            success:{(res, data) in
                let invite = UserDefaults.getInfo()["inviteCode"]!
             let qrUrl = "https://www.ganjinsheng.com/user/inviteShare?id=\(self.shotitemid)&invite=\(invite)&tbPwd=\(data["model"].string)"
-            self.getGoodsInfo(self.shotitemid!, qrUrl)
+            self.getGoodsInfo(self.shotitemid, qrUrl)
            },
            error:{
                IDLoading.id_dismissWait()
@@ -401,7 +401,7 @@ extension SecondRecommendCell {
         weak var weakSelf = self //避免循环引用
            print("点击了")
            let vc = DetailController()
-           detailId = Int(self.shotitemid!)
+        detailId = Int(self.shotitemid)
         weakSelf!.recommendnavi?.pushViewController(vc, animated: true)
   
     }
@@ -421,7 +421,7 @@ extension SecondRecommendCell : UICollectionViewDelegate,UICollectionViewDataSou
                    print("点击了")
                    if #available(iOS 11.0, *) {
                        let vc = DetailController()
-                       detailId = Int(self.shotitemid!)
+                    detailId = Int(self.shotitemid)
                        recommendnavi?.pushViewController(vc, animated: true)
                    }
                }
