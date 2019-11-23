@@ -92,7 +92,7 @@ class AdviceView: ViewController, UIImagePickerControllerDelegate, UINavigationC
         img.layer.cornerRadius = 5
         img.frame = box.bounds
         
-        let close = UIImageView(frame: CGRect(x: imgWidth - 14, y: -10, width: 24, height: 24))
+        let close = UIImageView(frame: CGRect(x: imgWidth - 14, y: -10, width: 23, height: 23))
         close.image = UIImage(named: "close-danger")
         close.tag = count
         close.isUserInteractionEnabled = true
@@ -110,9 +110,9 @@ class AdviceView: ViewController, UIImagePickerControllerDelegate, UINavigationC
         let a = Float(count) * Float(imgWidth)
         let b = Float(count) * 10
         let x = a + b + 10
-        box.frame = CGRect(x: CGFloat(x), y: 210, width: imgWidth, height: imgWidth)
+        box.frame = CGRect(x: CGFloat(x), y: (kScreenW*0.715), width: imgWidth, height: imgWidth)
         
-        let close = UIImageView(frame: CGRect(x: imgWidth - 14, y: -10, width: 24, height: 24))
+        let close = UIImageView(frame: CGRect(x: imgWidth - 14, y: -10, width: 23, height: 23))
         close.image = UIImage(named: "close-danger")
         close.tag = count
         close.isUserInteractionEnabled = true
@@ -194,4 +194,12 @@ class AdviceView: ViewController, UIImagePickerControllerDelegate, UINavigationC
         error: {},
         failure: {})
     }
+    //点击空白处关闭键盘
+        override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+            //某个textview失去了响应者，即收起键盘了
+            content.resignFirstResponder()
+            //或注销当前view(或它下属嵌入的text fields)的first responder 状态，即可关闭其子控件键盘
+            self.view?.endEditing(false)
+        }
+
 }

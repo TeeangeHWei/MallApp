@@ -79,7 +79,7 @@ class ExpertArticleController : UIViewController, WKNavigationDelegate {
         view.addSubview(coustomNavView)
     }
     @objc func backAction(sender:UIButton) -> Void {
-        print("触发了+++++")
+       
         self.navigationController?.popViewController(animated: true)
     }
     override func didReceiveMemoryWarning() {

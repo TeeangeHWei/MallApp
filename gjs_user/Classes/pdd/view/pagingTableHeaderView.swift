@@ -7,34 +7,22 @@
 //
 
 import UIKit
-struct imgModel {
-    
-    var images:[String]
-}
-
 @available(iOS 11.0, *)
 class pagingTableHeaderView: UIView,UICollectionViewDelegate,UICollectionViewDataSource{
     var collectionView : UICollectionView?
     var PagingnaviController : UINavigationController?
+    let cycleView = ZCycleView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenW * 240/640))
     let images = ["pdd-1","pdd-3","pdd-5","pdd-4"]
     let chageImages = ["pdd-1","pdd-5"]
-    var urlimg : Array<cycleScrollModel>!{
-        didSet{
-            
-        }
-    }
     override init(frame: CGRect) {
         let kcycleViewHeight :CGFloat = 156
         
         super.init(frame: frame)
-        let cycleView = ZCycleView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenW * 240/640))
-        
-//
-        if UserDefaults.getIsShow() == 0{
-           cycleView.setImagesGroup([#imageLiteral(resourceName: "pdd-banner")])
-        }else{
-           cycleView.setUrlsGroup(["https://www.ganjinsheng.com/files/user/slide/20191115092309.png"])
-        }
+//        if UserDefaults.getIsShow() == 1{
+//           cycleView.setImagesGroup([#imageLiteral(resourceName: "pdd-banner")])
+//        }else{
+//           cycleView.setUrlsGroup(["https://www.ganjinsheng.com/files/user/slide/20191115092309.png"])
+//        }
         
         //        cycleView.pageControlItemSize = CGSize(width: 16, height: 4)
         //        cycleView.pageControlItemRadius = 0

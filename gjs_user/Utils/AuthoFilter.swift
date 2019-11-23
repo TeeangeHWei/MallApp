@@ -34,7 +34,7 @@ extension UIViewController {
         let viewControllerName = NSStringFromClass(type(of: self))
         //放行路径
         var flag = false
-        let publicView = ["Home","BaseView","TabBarView","Classify","LoginCommonView","LoginByPhone", "LoginView","ForgetView","SignupView"]
+        let publicView = ["Home","BaseView","TabBarView","Classify","LoginCommonView","LoginByPhone", "LoginView","ForgetView","SignupView","ExpertArticle","privacyView","PddView","JdView","Detail"]
         for item in publicView {
             // 路径包含“放行路径”
             if viewControllerName.contains(item){

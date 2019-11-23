@@ -17,6 +17,11 @@
 		5C45EC0722FE59660018531A /* HomeTarBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C45EC0622FE59660018531A /* HomeTarBar.swift */; };
 		5C45EC0B22FE5FF60018531A /* HomeTarBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C45EC0822FE5D200018531A /* HomeTarBarController.swift */; };
 		5C45EC0F22FE6B5A0018531A /* CustomizeHomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C45EC0E22FE6B5A0018531A /* CustomizeHomeTabBar.swift */; };
+		5C4A931423863DA800E33097 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A931323863DA700E33097 /* VideosViewController.swift */; };
+		5C4A93162387675300E33097 /* jdUicollecionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A93152387675200E33097 /* jdUicollecionFlowLayout.swift */; };
+		5C4A931823876FD400E33097 /* jdTestBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A931723876FD400E33097 /* jdTestBaseView.swift */; };
+		5C4A931A2387AE4500E33097 /* jdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A93192387AE4400E33097 /* jdModel.swift */; };
+		5C4A931C2388DB7100E33097 /* privacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A931B2388DB7100E33097 /* privacyViewController.swift */; };
 		5C51D73B23716C1E00081349 /* NewRecommendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C51D73923716C1D00081349 /* NewRecommendController.swift */; };
 		5C51D74023716D0700081349 /* WLImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C51D73D23716D0700081349 /* WLImageCell.swift */; };
 		5C51D74123716D0700081349 /* WLImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C51D73E23716D0700081349 /* WLImageCell.xib */; };
@@ -77,7 +82,6 @@
 		5CFD92F6237913150017EA5A /* homeShakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD92F5237913150017EA5A /* homeShakeCell.swift */; };
 		5CFD92FE237AB0860017EA5A /* shakeBondVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD92FD237AB0860017EA5A /* shakeBondVideoController.swift */; };
 		5CFD930D237B91DE0017EA5A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD9309237B91DD0017EA5A /* VideoViewController.swift */; };
-		5CFD930F237B91DE0017EA5A /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD930B237B91DE0017EA5A /* VideosViewController.swift */; };
 		5CFE75F3235813A1000C765F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE75C7235813A1000C765F /* MJRefreshAutoFooter.m */; };
 		5CFE75F4235813A1000C765F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE75C9235813A1000C765F /* MJRefreshBackFooter.m */; };
 		5CFE75F5235813A1000C765F /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE75CB235813A1000C765F /* MJRefreshComponent.m */; };
@@ -329,6 +333,11 @@
 		5C45EC0622FE59660018531A /* HomeTarBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTarBar.swift; sourceTree = "<group>"; };
 		5C45EC0822FE5D200018531A /* HomeTarBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTarBarController.swift; sourceTree = "<group>"; };
 		5C45EC0E22FE6B5A0018531A /* CustomizeHomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeHomeTabBar.swift; sourceTree = "<group>"; };
+		5C4A931323863DA700E33097 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		5C4A93152387675200E33097 /* jdUicollecionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jdUicollecionFlowLayout.swift; sourceTree = "<group>"; };
+		5C4A931723876FD400E33097 /* jdTestBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jdTestBaseView.swift; sourceTree = "<group>"; };
+		5C4A93192387AE4400E33097 /* jdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jdModel.swift; sourceTree = "<group>"; };
+		5C4A931B2388DB7100E33097 /* privacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = privacyViewController.swift; sourceTree = "<group>"; };
 		5C51D73923716C1D00081349 /* NewRecommendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRecommendController.swift; sourceTree = "<group>"; };
 		5C51D73D23716D0700081349 /* WLImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLImageCell.swift; sourceTree = "<group>"; };
 		5C51D73E23716D0700081349 /* WLImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WLImageCell.xib; sourceTree = "<group>"; };
@@ -389,7 +398,6 @@
 		5CFD92F5237913150017EA5A /* homeShakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeShakeCell.swift; sourceTree = "<group>"; };
 		5CFD92FD237AB0860017EA5A /* shakeBondVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shakeBondVideoController.swift; sourceTree = "<group>"; };
 		5CFD9309237B91DD0017EA5A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		5CFD930B237B91DE0017EA5A /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		5CFE75C6235813A1000C765F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		5CFE75C7235813A1000C765F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		5CFE75C8235813A1000C765F /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -806,6 +814,8 @@
 			isa = PBXGroup;
 			children = (
 				5CE564282350A93200846423 /* JdHeaderView.swift */,
+				5C4A93152387675200E33097 /* jdUicollecionFlowLayout.swift */,
+				5C4A931723876FD400E33097 /* jdTestBaseView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -813,6 +823,7 @@
 		5CE564252350A6A700846423 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				5C4A93192387AE4400E33097 /* jdModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -829,7 +840,7 @@
 		5CFD92F12379100A0017EA5A /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				5CFD930B237B91DE0017EA5A /* VideosViewController.swift */,
+				5C4A931323863DA700E33097 /* VideosViewController.swift */,
 				5CFD92EF23790FFF0017EA5A /* shakeBondViewController.swift */,
 				5CFD92FD237AB0860017EA5A /* shakeBondVideoController.swift */,
 				5CFD9309237B91DD0017EA5A /* VideoViewController.swift */,
@@ -2860,6 +2871,7 @@
 				FB17E18923113F19005DD628 /* SignupViewController.swift */,
 				FB17E18B23113F38005DD628 /* ForgetViewController.swift */,
 				FBAB58DB23201D0A006370A6 /* LoginByPhoneViewController.swift */,
+				5C4A931B2388DB7100E33097 /* privacyViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -3060,7 +3072,6 @@
 				D2B094F323209F9500080743 /* ClassifyGoodsController.swift in Sources */,
 				5C9BF4B12318FDD7004EF9BA /* cache.swift in Sources */,
 				5CFE75F3235813A1000C765F /* MJRefreshAutoFooter.m in Sources */,
-				5CFD930F237B91DE0017EA5A /* VideosViewController.swift in Sources */,
 				D26CE134233F0DB200F36F27 /* CardCell.swift in Sources */,
 				D22961E9230A804800FA2EEB /* NicknameView.swift in Sources */,
 				D2162E612313B13200F092F5 /* SelectorController.swift in Sources */,
@@ -3073,9 +3084,11 @@
 				D2EE156A23585AF200484E28 /* PddDetailController.swift in Sources */,
 				5C9F8131237C090B00CEA64B /* HeaderFile.swift in Sources */,
 				D22961C7230A79DA00FA2EEB /* ClassifyGoodsListView.swift in Sources */,
+				5C4A93162387675300E33097 /* jdUicollecionFlowLayout.swift in Sources */,
 				FBC9E5CB230FB71100B13239 /* SignupView.swift in Sources */,
 				D2FC6EA7233B9F2400C3E5E9 /* WithdrawPop.swift in Sources */,
 				D269C37F2317A96F00D15B5E /* NewThisWeek.swift in Sources */,
+				5C4A931823876FD400E33097 /* jdTestBaseView.swift in Sources */,
 				D24118772348C65700DA14D8 /* BannerModel.swift in Sources */,
 				5C4181E923279F8F00A00BF0 /* PageControllCell.swift in Sources */,
 				5C65E96E234EC60A00FC44C8 /* PddViewController.swift in Sources */,
@@ -3087,6 +3100,7 @@
 				5C5F4C882354094500B153C8 /* PddRedPacTableViewCell.swift in Sources */,
 				D2B094B8231F4F8F00080743 /* SysParams.swift in Sources */,
 				5CE5640B234F43B500846423 /* JXPagingListContainerView.swift in Sources */,
+				5C4A931C2388DB7100E33097 /* privacyViewController.swift in Sources */,
 				D24118812349F1E800DA14D8 /* GoodsShareController.swift in Sources */,
 				D2B094BD231F608200080743 /* LeftClassify.swift in Sources */,
 				D23BB1C32329260C00087216 /* CheckBoxView.swift in Sources */,
@@ -3228,6 +3242,7 @@
 				5CFD92F023790FFF0017EA5A /* shakeBondViewController.swift in Sources */,
 				D22960AB2303AB4400FA2EEB /* ImgUtils.swift in Sources */,
 				D269C373231775FE00D15B5E /* TimeListView.swift in Sources */,
+				5C4A931A2387AE4500E33097 /* jdModel.swift in Sources */,
 				5CFE75F6235813A1000C765F /* MJRefreshFooter.m in Sources */,
 				D2DB5B8E232E39090078AE70 /* SearchResultView.swift in Sources */,
 				D22961D4230A79DA00FA2EEB /* PageOptions.swift in Sources */,
@@ -3266,6 +3281,7 @@
 				D2EE157B2359DC9100484E28 /* PddGoodsShareController.swift in Sources */,
 				FBC9E5D1230FB88400B13239 /* LoginCommonViewController.swift in Sources */,
 				FBC9E5D1230FB88400B13239 /* LoginCommonViewController.swift in Sources */,
+				5C4A931423863DA800E33097 /* VideosViewController.swift in Sources */,
 				5C100D542334F1BB005ACDB0 /* HomeClassViewController.swift in Sources */,
 				5CFE7602235813A1000C765F /* MJRefreshConst.m in Sources */,
 				D2EE155F235714FC00484E28 /* PddGoodsCard.swift in Sources */,

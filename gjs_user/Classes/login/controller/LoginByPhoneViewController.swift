@@ -11,7 +11,7 @@ import UIKit
 @available(iOS 11.0, *)
 class LoginByPhoneViewController: UIViewController {
     
-    private var loginByPhone = LoginByPhoneView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH))
+    private var loginByPhone = LoginByPhoneView(frame: CGRect(x: 0, y: headerHeight+kCateTitleH, width: kScreenW, height: kScreenH))
     private var step = 1
     private var verifySign:String! = ""
     private var phoneSign:String! = ""
@@ -19,13 +19,39 @@ class LoginByPhoneViewController: UIViewController {
     //自定义头部
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
-        setNav(titleStr: "手机号登录", titleColor: kMainTextColor, navItem: navigationItem, navController: navigationController)
+//        navigationController?.navigationBar.isHidden = false
+//        setNav(titleStr: "手机号登录", titleColor: kMainTextColor, navItem: navigationItem, navController: navigationController)
+//        
+//        let leftBtn = UIBarButtonItem(title: "上一步", style: .plain, target: self, action: #selector(backBefore))
+//        leftBtn.tintColor = kHighOrangeColor
+//        leftBtn.setTitleTextAttributes([NSAttributedString.Key.font: FontSize(14)], for: .normal)
+//        self.navigationItem.leftBarButtonItem = leftBtn;
+    }
+    func setNavUi(){
         
-        let leftBtn = UIBarButtonItem(title: "上一步", style: .plain, target: self, action: #selector(backBefore))
-        leftBtn.tintColor = kHighOrangeColor
-        leftBtn.setTitleTextAttributes([NSAttributedString.Key.font: FontSize(14)], for: .normal)
-        self.navigationItem.leftBarButtonItem = leftBtn;
+        navigationController?.navigationBar.isHidden = true
+        let topView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: headerHeight))
+        topView.backgroundColor = .clear
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: kStatuHeight, width: kScreenW, height: kNavigationBarHeight))
+        navBar.backgroundColor = .clear
+        let navItem = UINavigationItem()
+        let backBtn = UIBarButtonItem(title: "上一步", style: .plain, target: self, action: #selector(backBefore))
+        let title = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
+        title.text = "手机登录"
+        title.textAlignment = .center
+        title.textColor = .black
+        navItem.titleView = title
+        backBtn.tintColor = kHighOrangeColor
+        backBtn.setTitleTextAttributes([NSAttributedString.Key.font: FontSize(14)], for: .normal)
+        navItem.setLeftBarButton(backBtn, animated: true)
+        navBar.tintColor = .white
+        navBar.shadowImage = UIImage()
+        navBar.isTranslucent = true
+        navBar.pushItem(navItem, animated: true)
+        navBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.view.addSubview(topView)
+        topView.addSubview(navBar)
+        
     }
     
     @objc func backBefore(){
@@ -40,6 +66,7 @@ class LoginByPhoneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        setNavUi()
         loginByPhone.nextBtn.addTarget(self, action: #selector(nextStep), for: .touchUpInside)
         self.nextStep()
         self.view.addSubview(loginByPhone)

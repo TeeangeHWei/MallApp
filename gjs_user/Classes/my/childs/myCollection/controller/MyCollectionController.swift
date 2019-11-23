@@ -125,12 +125,14 @@ class MyCollectionController: ViewController, platformDelegate {
         self.view.addSubview(coustomNavView)
     }
     
-    
+    // 平台切换
     func platformDelegatefuc(backMsg: Int) {
         platform = backMsg
+        self.allData = [CollectionItem]()
         self.checkIndexList = [Int]()
         self.checkBoxList.clearAll2()
         self.goodsInfoList.clearAll2()
+        self.checkBoxArr = [checkBox]()
         self.allHeight = 0
         self.pageNo = 0
         self.noMore.isHidden = true
@@ -162,19 +164,29 @@ class MyCollectionController: ViewController, platformDelegate {
             for item in checkBoxArr {
                 item.checkValue = true
             }
+            self.checkIndexList = [Int]()
+            for item in checkBoxArr {
+                self.checkIndexList.append(item.tag)
+            }
         } else {
             for item in checkBoxArr {
                 item.checkValue = false
             }
+            self.checkIndexList = [Int]()
         }
     }
     // 删除选中
     func toRemoveCheck () {
         IDLoading.id_showWithWait()
         idsList = [String]()
+        print("checkIndexList:",checkIndexList)
+        print("allData:",allData)
         for index in checkIndexList {
+            
             idsList.append(allData[index].id!)
+            print("删除选中list：：",index)
         }
+        print("idslist::\(idsList.count)")
         if idsList.count == 0 {
             IDLoading.id_dismissWait()
             IDToast.id_show(msg: "您还没有选择", success: .fail)
@@ -189,6 +201,9 @@ class MyCollectionController: ViewController, platformDelegate {
                 return
             }
             self.checkIndexList = [Int]()
+            self.idsList = [String]()
+            self.allData = [CollectionItem]()
+            self.checkBoxArr = [checkBox]()
             self.checkBoxList.clearAll2()
             self.goodsInfoList.clearAll2()
             self.allHeight = 0
@@ -203,6 +218,7 @@ class MyCollectionController: ViewController, platformDelegate {
                 self.goodsInfoList.frame.origin.x = 0
             }
             self.myCollectionFooter.checkAll.checkValue = false
+            
             IDToast.id_show(msg: "删除成功", success: .success)
             IDLoading.id_dismissWait()
         },

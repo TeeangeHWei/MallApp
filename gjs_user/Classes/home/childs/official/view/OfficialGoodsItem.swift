@@ -221,7 +221,7 @@ class OfficialGoodsItem: UIView {
         // 获取会员等级，获取不到按超级会员算
         var memberStatus = 1
         let info = UserDefaults.getInfo()
-        if info["id"] as! String != "-1" {
+        if info["id"] as! String != "" {
             memberStatus = Int(UserDefaults.getInfo()["memberStatus"] as! String)!
         }
         // 会员赚

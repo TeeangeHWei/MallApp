@@ -372,7 +372,9 @@ extension zeroTableViewCell{
         
     }
     @objc func darenclick(){
+        let vc = JdViewController()
         naviController?.pushViewController(ExpertArticleController(), animated: true)
+//        naviController?.pushViewController(vc, animated: true)
     }
     @objc func rankclick(){
         naviController?.pushViewController(RankingListController(), animated: true)

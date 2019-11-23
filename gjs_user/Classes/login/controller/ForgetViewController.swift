@@ -9,16 +9,18 @@
 import UIKit
 
 @available(iOS 11.0, *)
-class ForgetViewController: UIViewController {
+class ForgetViewController: ViewController {
     
-    private let forgetView = ForgetView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH))
+    private let forgetView = ForgetView(frame: CGRect(x: 0, y: headerHeight+kCateTitleH, width: kScreenW, height: kScreenH))
     private var verifySign : String! = ""
     private var phoneSign : String! = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let navView = customNav(titleStr: "忘记密码", titleColor: kMainTextColor, border: false)
+               self.view.addSubview(navView)
         self.view.backgroundColor = .white
-        setNav(titleStr: "忘记密码", titleColor: kMainTextColor, navItem: navigationItem, navController: navigationController)
+//        setNav(titleStr: "忘记密码", titleColor: kMainTextColor, navItem: navigationItem, navController: navigationController)
         //获取图片验证码
         self.verifyClick()
         forgetView.verifyImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(verifyClick)))
@@ -30,7 +32,7 @@ class ForgetViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
+//        navigationController?.navigationBar.isHidden = false
     }
     
     //获取图片验证码
@@ -81,7 +83,8 @@ class ForgetViewController: UIViewController {
             success: {(res, data) in
                 IDLoading.id_dismissWait()
                 IDToast.id_show(msg: "密码重置成功",success:.success)
-                self.navigationController?.pushViewController(LoginViewController(), animated: true)
+//                self.navigationController?.pushViewController(LoginViewController(), animated: true)
+                self.navigationController?.popViewController(animated: true)
             },
             error: {
                 

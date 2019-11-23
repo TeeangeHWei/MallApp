@@ -425,7 +425,7 @@ extension tableListBaseView : UITableViewDelegate,UITableViewDataSource{
             return 1
         }else if section == 5{
             if UserDefaults.getIsShow() == 1{
-                return 1
+                return 0
             }else{
                 return 0
             }
@@ -529,6 +529,10 @@ extension tableListBaseView : UITableViewDelegate,UITableViewDataSource{
             cell.naviController = naviController
             cell.backgroundColor = colorwithRGBA(241, 241, 241, 1)
             cell.shakebondModel = self.shakeDataSource[indexPath.row]
+            let videoVC = VideosViewController()
+            
+            
+            
             return cell
             
         }else{

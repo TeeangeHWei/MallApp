@@ -18,8 +18,14 @@ class VideoViewController: ViewController {
     var BMplayer = BMPlayer(customControlView: progressView())
     // 播放图标
     var startImg = UIImageView()
-    // 播放量
+    // 播放量控件
     var playNum = UILabel()
+    // 播放数
+    var playNumStr = String()
+    // 视频url
+    var video_url = String()
+    // id
+    var id = String()
     //播放器状态
     var state : BMPlayerState?
     let url = URL.init(string: "http://video.haodanku.com/604b62bd6b74e906079f3aaab5019a0e.mp4?attname=1573625176.mp4")
@@ -30,7 +36,7 @@ class VideoViewController: ViewController {
         let nav = customNav(titleStr: "", titleColor: kMainTextColor, border: false)
         self.view.addSubview(nav)
         // 是否打印日志，默认false
-        BMPlayerConf.allowLog = true
+        BMPlayerConf.allowLog = false
         // 是否自动播放，默认true
         BMPlayerConf.shouldAutoPlay = true
         BMPlayerConf.loaderType  = NVActivityIndicatorType.ballBeat
@@ -81,11 +87,13 @@ class VideoViewController: ViewController {
          BMplayer.play()
      }
       print("调用了viewWillAppear")
-      BMplayer.play()
+//      BMplayer.play()
     }
     
     func vdieoUI(){
         view.addSubview(BMplayer)
+        BMplayer.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH)
+//        BMplayer.videoGravity = AVLayerVideoGravity.resize
         
         BMplayer.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH)
         self.startImg = UIImageView.init()
@@ -103,18 +111,18 @@ class VideoViewController: ViewController {
         playIcon.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-8)
             make.centerY.equalToSuperview().offset(60)
-            make.height.equalTo(30)
-            make.width.equalTo(40)
+            make.height.equalTo(28)
+            make.width.equalTo(38)
         }
         playNum = UILabel.init()
         playNum.textAlignment = .center
         playNum.textColor = .white
-        playNum.text = "111"
+        playNum.text = playNumStr
         playNum.font = UIFont.systemFont(ofSize: 16)
         BMplayer.addSubview(playNum)
         playNum.snp.makeConstraints { (make) in
             make.top.equalTo(playIcon.snp.bottom).offset(5)
-            make.width.equalTo(70)
+            make.width.equalTo(68)
             make.height.equalTo(30)
             make.right.equalToSuperview().offset(5)
         }
@@ -124,8 +132,8 @@ class VideoViewController: ViewController {
         BMplayer.addSubview(writeBtn)
         writeBtn.snp.makeConstraints { (make) in
             make.top.equalTo(playNum.snp.bottom).offset(8)
-            make.height.equalTo(43)
-            make.width.equalTo(38)
+            make.height.equalTo(41)
+            make.width.equalTo(36)
             make.right.equalToSuperview().offset(-8)
         }
         let writeLabel = UILabel.init()
@@ -145,8 +153,8 @@ class VideoViewController: ViewController {
         BMplayer.addSubview(shareBtn)
         shareBtn.snp.makeConstraints { (make) in
             make.top.equalTo(writeLabel.snp.bottom).offset(8)
-            make.height.equalTo(43)
-            make.width.equalTo(35)
+            make.height.equalTo(41)
+            make.width.equalTo(33)
             make.right.equalToSuperview().offset(-8)
         }
         let shareLabel = UILabel.init()
@@ -162,9 +170,10 @@ class VideoViewController: ViewController {
             make.right.equalToSuperview().offset(-5)
         }
         
-        
-        let asset = BMPlayerResource(url: URL(string: "http://video.haodanku.com/604b62bd6b74e906079f3aaab5019a0e.mp4?attname=1573625176.mp4")!,
+        print("滚动的时候",video_url)
+        let asset = BMPlayerResource(url: URL(string: video_url)!,
                                      name: "")
+        
         BMplayer.setVideo(resource: asset)
         NotificationCenter.default.addObserver(self,
                                                  selector: #selector(applicationDidEnterBackground),

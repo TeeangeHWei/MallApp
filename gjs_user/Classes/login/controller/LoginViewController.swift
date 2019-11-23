@@ -21,6 +21,7 @@ class LoginViewController: ViewController {
         loginView.forget.addGestureRecognizer(UITapGestureRecognizer(target:self, action:#selector(toForget)))
         loginView.btn.addTarget(self, action: #selector(login), for: .touchUpInside)
         self.view.addSubview(loginView)
+        loginView.navigation = self.navigationController!
     }
     
     override func viewWillAppear(_ animated: Bool) {

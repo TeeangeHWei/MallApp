@@ -276,19 +276,19 @@ class MyController: ViewController, UIScrollViewDelegate {
         myIncome.addSubview(myIncomeList)
         for index in 1...3 {
             var name = "今日预估"
-            var num = 15.0
+            var num = 00.00
             var needBorder = true
             if index == 1 {
                 name = "今日预估"
-                num = 15.11
+                num = 00.00
                 needBorder = true
             } else if index == 2 {
                 name = "昨日预估"
-                num = 15.0
+                num = 00.00
                 needBorder = true
             } else if index == 3 {
                 name = "本月预估"
-                num = 15.26
+                num = 00.00
                 needBorder = false
             }
             let myIncomeItem = UIView(frame: CGRect(x: 0, y: 0, width: (containerSize.width - 20)/3, height: 50))
@@ -375,7 +375,7 @@ class MyController: ViewController, UIScrollViewDelegate {
         }
         money.addSubview(moneyKey)
         
-        moneyValue.text = "5.98"
+        moneyValue.text = "0.00"
         moneyValue.font = FontSize(16)
         moneyValue.textColor = colorwithRGBA(110,87,57,1)
         moneyValue.configureLayout { (layout) in

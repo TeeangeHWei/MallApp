@@ -81,7 +81,6 @@ class shakeBondViewController: ViewController {
             self.shakeDataSource = [shakeBondlist]
             self.newShakeDataSource += shakeBondlist
             self.loadMoreEnable = true
-            print("newShakeDataSource",self.newShakeDataSource)
             self.mind_id = data["min_id"].int!
             self.collectionView.reloadData()
         }, error: {

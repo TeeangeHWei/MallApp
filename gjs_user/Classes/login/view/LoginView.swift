@@ -9,7 +9,7 @@
 import UIKit
 
 class LoginView: UIView {
-
+    var navigation:UINavigationController?
     var sms:UILabel!
     var forget:UILabel!
     var btn:UIButton!
@@ -57,6 +57,9 @@ class LoginView: UIView {
         mainView.addSubview(forget)
         
         let tip = UILabel(frame: CGRect(x: 20, y: 280, width: kScreenW - 40, height: 20))
+        tip.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(privacy))
+        tip.addGestureRecognizer(tap)
         let tip1 = "登录即代表您已同意"
         let tip2 = "《赶紧省隐私协议》"
         let tipTotal = NSMutableAttributedString(string: tip1 + tip2)
@@ -69,6 +72,10 @@ class LoginView: UIView {
         tip.textAlignment = .center
         mainView.addSubview(tip)
         self.addSubview(mainView)
+    }
+    @objc func privacy(){
+        print("点击了。。。。。。")
+        navigation?.pushViewController(privacyViewController(), animated: true)
     }
     
     required init?(coder aDecoder: NSCoder) {

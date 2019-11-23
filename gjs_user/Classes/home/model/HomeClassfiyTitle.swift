@@ -125,6 +125,10 @@ struct shakeBondData : HandyJSON{
     var tkmoney : String?
     // 商场类型
     var shoptype : String?
+    // 视频
+    var dy_video_url : String?
+    //itemid
+    var itemid : String?
     /*-------- 首页抖券详情更多数据---------*/
 }
 var shakeBondlist : [shakeBondData] = [shakeBondData]()

@@ -10,7 +10,8 @@ import UIKit
 
 class VideosViewController: ViewController,UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     var currentIndex : Int = 1
-    
+    var startNum = String()
+    var video_url = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()

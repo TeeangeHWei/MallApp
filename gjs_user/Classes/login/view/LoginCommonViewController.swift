@@ -240,8 +240,11 @@ class LoginCommonViewController: UIViewController {
             self.getInfo()
             IDLoading.id_dismissWait()
             IDToast.id_show(msg: "登录成功", success: .success)
-            let vcCount = self.navigationController?.viewControllers.count
-            self.navigationController?.popToViewController((self.navigationController?.viewControllers[vcCount! - 2])!, animated: true)
+//            let vcCount = self.navigationController?.viewControllers.count
+            
+//            self.navigationController?.popToViewController((self.navigationController?.viewControllers[vcCount! - 3])!, animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
+//            print("count是多少：：；",self.navigationController?.viewControllers.count)
         },
         error:{
             let vc = SignupViewController()

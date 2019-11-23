@@ -68,8 +68,8 @@ class PddViewController: ViewController {
         PddHeaderView = pagingTableHeaderView(frame: PdduserHeaderContainerView.bounds)
         PddHeaderView.PagingnaviController = navigationController
 //        PddHeaderView.cycleView.setUrlsGroup(imglist)
-        PddHeaderView.urlimg = pddCycleModel
-        print("imglist::",imglist)
+//        PddHeaderView.urlimg = pddCycleModel
+        
         PdduserHeaderContainerView.addSubview(PddHeaderView)
         //1、初始化JXSegmentedView
         PddsegmentedView = JXSegmentedView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: CGFloat(PddheightForHeaderInSection)))
@@ -128,15 +128,23 @@ class PddViewController: ViewController {
     //MARK: --  轮播图请求
      func pddCycleScroll(){
         AlamofireUtil.post(url: "/user/public/slideshow/list", param: ["pageNo": 1,"pageSize": 10,"specialShowType":3], success: { (res, data) in
-            if UserDefaults.getIsShow() == 1{
                 self.pddCycleModel = cycleScrollList.deserialize(from: data.description)!.list!
-                
                 for item in self.pddCycleModel{
                     self.imglist.append("https://www.ganjinsheng.com\(item.img!)")
-                }
-
+                
+                
+                print("pddCycleModel:",self.imglist)
+                print("UserDefaults:",UserDefaults.getIsShow())
+               
                 self.PddpagingView.mainTableView.reloadData()
             }
+            if UserDefaults.getIsShow() == 0{
+               self.PddHeaderView.cycleView.setUrlsGroup(self.imglist)
+           }else{
+
+            self.PddHeaderView.cycleView.setUrlsGroup(["https://www.ganjinsheng.com/files/user/slide/20191115092309.png"])
+
+           }
         }, error: {
             
         }, failure: {
